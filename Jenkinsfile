@@ -22,12 +22,24 @@ pipeline {
         }
 
         stage('Build') {
+            when {
+                anyOf {
+                    branch 'feature'
+                    branch 'main'
+                }
+            }
             steps {
                 sh 'dotnet build --no-restore'
             }
         }
 
         stage('Test') {
+            when {
+                anyOf {
+                    branch 'feature'
+                    branch 'main'
+                }
+            }
             steps {
                 sh 'dotnet test --no-build --verbosity normal'
             }
