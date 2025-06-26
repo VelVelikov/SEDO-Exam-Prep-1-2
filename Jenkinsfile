@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        any // or 'any' if no specific label
-    }
+    agent any
 
     stages {
         stage('Checkout') {
