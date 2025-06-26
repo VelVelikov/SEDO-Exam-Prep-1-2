@@ -10,6 +10,12 @@ pipeline {
 
 
         stage('Restore dependencies') {
+            when {
+                anyOf {
+                    branch 'feature'
+                    branch 'main'
+                }
+            }
             steps {
                 sh 'dotnet restore'
             }
