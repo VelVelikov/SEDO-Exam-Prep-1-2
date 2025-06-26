@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label any // or 'any' if no specific label
+        agent any // or 'any' if no specific label
     }
 
     stages {
